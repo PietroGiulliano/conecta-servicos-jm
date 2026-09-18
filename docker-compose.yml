@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: conectaservicos-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: conectaservicos
+      POSTGRES_PASSWORD: conectaservicos
+      POSTGRES_DB: conectaservicos
+    ports:
+      - "5432:5432"
+    volumes:
+      - conectaservicos_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U conectaservicos -d conectaservicos"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  conectaservicos_pgdata:

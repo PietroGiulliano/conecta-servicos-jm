@@ -1,0 +1,10 @@
+{
+  "folders": [
+    { "name": "ConectaServiços", "path": "." },
+    { "name": "Frontend", "path": "conectaservicos-frontend" },
+    { "name": "Backend", "path": "backend" }
+  ],
+  "settings": {
+    "typescript.tsdk": "node_modules/typescript/lib"
+  }
+}

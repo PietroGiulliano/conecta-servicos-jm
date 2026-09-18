@@ -1,0 +1,107 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "ConectaServiços: Backend",
+      "type": "shell",
+      "command": "npm run dev",
+      "options": {
+        "cwd": "${workspaceFolder}/backend"
+      },
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "typescript",
+        "pattern": {
+          "regexp": ".*",
+          "file": 1,
+          "location": 2,
+          "message": 3
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": ".*",
+          "endsPattern": "a^"
+        }
+      },
+      "presentation": {
+        "group": "conectaservicos",
+        "panel": "dedicated",
+        "reveal": "always"
+      }
+    },
+    {
+      "label": "ConectaServiços: Frontend",
+      "type": "shell",
+      "command": "npm run dev -- --host localhost",
+      "options": {
+        "cwd": "${workspaceFolder}/conectaservicos-frontend"
+      },
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "vite",
+        "pattern": {
+          "regexp": ".*"
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": ".*",
+          "endsPattern": "a^"
+        }
+      },
+      "presentation": {
+        "group": "conectaservicos",
+        "panel": "dedicated",
+        "reveal": "always"
+      }
+    },
+    {
+      "label": "🚀 ConectaServiços: Iniciar Sistema",
+      "dependsOn": [
+        "ConectaServiços: Backend",
+        "ConectaServiços: Frontend"
+      ],
+      "dependsOrder": "parallel",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "ConectaServiços: Instalar dependências",
+      "type": "shell",
+      "command": "npm install",
+      "options": {
+        "cwd": "${workspaceFolder}/backend"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "ConectaServiços: Instalar dependências Frontend",
+      "type": "shell",
+      "command": "npm install",
+      "options": {
+        "cwd": "${workspaceFolder}/conectaservicos-frontend"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "ConectaServiços: Build Frontend",
+      "type": "shell",
+      "command": "npm run build",
+      "options": {
+        "cwd": "${workspaceFolder}/conectaservicos-frontend"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "ConectaServiços: Build Backend",
+      "type": "shell",
+      "command": "npm run build",
+      "options": {
+        "cwd": "${workspaceFolder}/backend"
+      },
+      "problemMatcher": []
+    }
+  ]
+}

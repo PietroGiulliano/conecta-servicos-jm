@@ -1,0 +1,15 @@
+export * as authService from "./auth.service";
+export * as categoriesService from "./categories.service";
+export * as providersService from "./providers.service";
+export * as companiesService from "./companies.service";
+export * as serviceRequestsService from "./serviceRequests.service";
+export * as proposalsService from "./proposals.service";
+export * as ordersService from "./orders.service";
+export * as paymentsService from "./payments.service";
+export * as walletService from "./wallet.service";
+export * as reviewsService from "./reviews.service";
+export * as messagesService from "./messages.service";
+export * as notificationsService from "./notifications.service";
+export * as adminService from "./admin.service";
+export * as favoritesService from "./favorites.service";
+export * as uploadsService from "./uploads.service";
