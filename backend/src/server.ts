@@ -8,6 +8,6 @@ if (!isPaymentProviderConfigured()) {
   );
 }
 
-app.listen(env.port, () => {
-  console.log(`ConectaServiços API rodando em http://localhost:${env.port}`);
+app.listen(env.port, "0.0.0.0", () => {
+  console.log(`ConectaServiços API rodando na porta ${env.port}`);
 });
